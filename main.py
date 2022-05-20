@@ -15,6 +15,7 @@ for IP in IP_Addresses:
     print('Backing up device ' + str(IP))
     ssh.send_command('terminal length 0')
     run_config = ssh.send_command('show run')
+    print(run_config)
 
     f = open('/home/backups/Device ' + str(IP), 'w')
     f.write(run_config)
